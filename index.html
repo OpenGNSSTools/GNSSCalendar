@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GNSS Calendar</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>GNSS Calendar</h1>
+        <div class="results">
+            <div class="result-item">
+                <label>Selected Date:</label>
+                <span id="selectedDate">-</span>
+            </div>
+            <div class="result-item">
+                <label>Julian Day Number:</label>
+                <span id="julianDay">-</span>
+            </div>
+            <div class="result-item">
+                <label>Day of Year:</label>
+                <span id="dayOfYear">-</span>
+            </div>
+            <div class="result-item">
+                <label>GPS Week:</label>
+                <span id="gpsWeek">-</span>
+            </div>
+            <div class="result-item">
+                <label>GPS Day of Week:</label>
+                <span id="gpsDayOfWeek">-</span>
+            </div>
+        </div>
+        <div class="year-selector">
+            <button id="prevYear">←</button>
+            <input type="number" id="yearInput" min="1980" max="2099">
+            <button id="nextYear">→</button>
+        </div>
+        <div class="calendar-grid">
+            <!-- Calendar months will be generated here -->
+        </div>
+    </div>
+    <script src="js/gnssCalculator.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
