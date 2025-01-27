@@ -23,11 +23,13 @@ class GNSSCalculator {
     }
 
     calculateDayOfYear(date) {
-        // Yılın 1 Ocak tarihini al
-        const start = new Date(date.getFullYear(), 0, 1);
-        const diff = date - start;
+        // UTC zamanını kullanarak yılın başlangıcını ayarla
+        const start = Date.UTC(date.getFullYear(), 0, 1);
+        // Verilen tarihin UTC zamanını al
+        const current = Date.UTC(date.getFullYear(), date.getMonth(), date.getDate());
+        const diff = current - start;
         const oneDay = 1000 * 60 * 60 * 24;
-        const dayOfYear = Math.floor(diff / oneDay) + 1; // +1 ekliyoruz çünkü 1 Ocak, yılın 1. günüdür
+        const dayOfYear = Math.floor(diff / oneDay) + 1;
         return dayOfYear;
     }
 
